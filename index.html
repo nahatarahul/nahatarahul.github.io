@@ -1,40 +1,3 @@
-<?php
-	if (isset($_POST["submit"])) {
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$message = $_POST['message'];
-		$from = 'Resume Website'; 
-		$to = 'n05.rahul@gmail.com';
-		$subject = $_POST['subject'];
-		
-		$body ="From: $name\n E-Mail: $email\n Message:\n $message";
-		// Check if name has been entered
-		if (!$_POST['name']) {
-			$errName = 'Please enter your name';
-		}
-		
-		// Check if email has been entered and is valid
-		if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-			$errEmail = 'Please enter a valid email address';
-		}
-		
-		//Check if message has been entered
-		if (!$_POST['message']) {
-			$errMessage = 'Please enter your message';
-		}
-		//Check if subject has been entered
-		if (!$_POST['subject']) {
-			$errSubject = 'Please enter your subject';
-		}
-// If there are no errors, send the email
-		if (!$errName && !$errEmail && !$errMessage && !$errSubject) {
-			if (mail ($to, $subject, $body, $from)) {
-				$result='<div class="alert alert-success">Thank You! I will be in touch</div>';
-			} else {
-			}
-		}
-	}
-?>
 
 <!DOCTYPE HTML>
 <!--
@@ -70,7 +33,7 @@
 						<li><a href="#five">Contact</a></li>
 					</ul>
 				</nav>
-				<footer>
+				<!--<footer>
 					<ul class="icons">
 						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -78,7 +41,7 @@
 						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
 						<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
-				</footer>
+				</footer>-->
 			</section>
 
 		<!-- Wrapper -->
@@ -95,10 +58,10 @@
 										<p>I'm a 25 year old Computer Science Engineer<br />
 										from Delhi, India.</p>
 									</header>
-									<p>  I am a result driven individual accomplished in design and development of software solutions.<br />
+									<p align="justify">  I am a result driven individual accomplished in design and development of software solutions.<br />
 									I might not know everything at first but given a problem i can find its solution.</p> 
-									<p>  I have 4 years of experience working as a Engineer in Samsung Research India, Noida with proficiency in Object oriented infrastructure and readiness to adapt to company needs.</p>
-									<p>	 I love working with people, specially if they have the same passion I have for what they do.</p>
+									<p align="justify">  I have 4 years of experience working as a Engineer in Samsung Research India, Noida with proficiency in Object oriented infrastructure and readiness to adapt to company needs.</p>
+									<p align="justify">	 I love working with people, specially if they have the same passion I have for what they do.</p>
 								</div>
 							</section>
 
@@ -106,7 +69,7 @@
 							<section id="two">
 								<div class="container">
 									<h3>Things I Can Do</h3>
-									<p> I am a software programmer with good knowledge of Object oriented and scripting languages. I love structure and order and I also stand for quality. I love spending time on fixing little details.</p>
+									<p align="justify"> I am a software programmer with good knowledge of Object oriented and scripting languages. I love structure and order and I also stand for quality. I love spending time on fixing little details.</p>
 									<ul class="feature-icons">
 										<li class="fa-code">Object Oreinted Programming</li>
 										<li class="fa-wifi">Computer Network & Communication</li>
@@ -128,7 +91,7 @@
 										<article>
 											<a href="http://www.samsung.com/in/aboutsamsung/samsungelectronics/india/rnd/" target="_blank" class="image"><img src="images/pic01.jpg" height="180" width="20" alt="" /></a>
 											<div class="inner">
-												<p>Engineer for Commercial R&D team for providing assistance in production line with various function tests, automation, updates and RF calibration in Android and other platforms.</p>
+												<p align="justify">Engineer for Commercial R&D team for providing assistance in production line with various function tests, automation, updates and RF calibration in Android and other platforms.</p>
 											</div>
 										</article>
 									</div>
@@ -139,7 +102,7 @@
 										<article>
 											<a href="http://www.ni.com/en-in.html" target="_blank" class="image"><img src="images/bangalore.png" height="180" width="20" alt="" /></a>
 											<div class="inner">
-												<p>Designed a VI to convert an Image into its chromaticity co-ordinates.<br />
+												<p align="justify">Designed a VI to convert an Image into its chromaticity co-ordinates.<br />
 												Designed a Presentation and demonstration on Wireless Sensor Networks and Presented at the 3rd Annual DAQ conference in PUNE.</p>
 											</div>
 										</article>
@@ -150,7 +113,7 @@
 										<article>
 											<a href="http://lm2s.utt.fr/fr/_plugins/mypage/mypage/content/snoussi.html" target="_blank" class="image"><img src="images/france.jpg" height="180" width="20" alt="" /></a>
 											<div class="inner">
-												<p>Researched under prof. Hichem Snoussi, as a part CAPSEC Research Programme, working on Monitoring and Applications of Wireless Sensor Networks and on aspects related to Geo-localization.</p>
+												<p align="justify">Researched under prof. Hichem Snoussi, as a part CAPSEC Research Programme, working on Monitoring and Applications of Wireless Sensor Networks and on aspects related to Geo-localization.</p>
 											</div>
 										</article>
 									</div>
@@ -166,7 +129,7 @@
 											<a class="image"><img src="images/tools.jpg" alt="" /></a>
 											<div class="inner">
 												<h4>Delegated to my minions</h4>
-												<p>Implementation of Inhouse tools:<br />
+												<p align="justify">Implementation of Inhouse tools:<br />
 												1. Real time log analysis, with predition of similar issues & dropbox feature.<br />
 												2. Automation for verifying checklist during OS upgrade with EXCEL report.</p>
 											</div>
@@ -175,21 +138,21 @@
 											<a href="https://en.wikipedia.org/wiki/Symmetric_multiprocessing" target="_blank" class="image"><img src="images/smp.jpg" alt="" /></a>
 											<div class="inner">
 												<h4>Possibly broke spacetime</h4>
-												<p>Implementation of SMP to speed up the binary download during factory process. Reduced Time by 40%.</p>
+												<p align="justify">Implementation of SMP to speed up the binary download during factory process. Reduced Time by 40%.</p>
 											</div>
 										</article>
 										<article>
 											<a class="image"><img src="images/health.jpg" alt="" /></a>
 											<div class="inner">
 												<h4>Terraformed a small moon</h4>
-												<p>Designed and Developed a Mechanism to calcualte 3 lead ECG through Mobile Devices.</p>
+												<p align="justify">Designed and Developed a Mechanism to calcualte 3 lead ECG through Mobile Devices.</p>
 											</div>
 										</article>
 										<article>
 											<a class="image"><img src="images/innovate.jpg" alt="" /></a>
 											<div class="inner">
 												<h4>Snapped dark matter in the wild</h4>
-												<p>Designed a standalone system for Blind Signal Demodulation capable of detecting most modulations schemes and then demodulating it as a part of B.Tech project</p>
+												<p align="justify">Designed a standalone system for Blind Signal Demodulation capable of detecting most modulations schemes and then demodulating it as a part of B.Tech project</p>
 											</div>
 										</article>
 									</div>
@@ -200,35 +163,16 @@
 							<section id="five">
 								<div class="container">
 									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="index.html" enctype="multipart/form-data">
-										<div class="row uniform">
-											<div class="6u 12u(xsmall)"><input type="text" name="name" id="name" placeholder="Name" />
-											<?php echo "<p class='text-danger'>$errName</p>";?>
-											</div>
-											<div class="6u 12u(xsmall)"><input type="email" name="email" id="email" placeholder="Email" />
-											<?php echo "<p class='text-danger'>$errEmail</p>";?>
-											</div>
-										</div>
-										<div class="row uniform">
-											<div class="12u"><input type="text" name="subject" id="subject" placeholder="Subject" />
-											<?php echo "<p class='text-danger'>$errMessage</p>";?>
-											</div>
-										</div>
-										<div class="row uniform">
-											<div class="12u"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea>
-											<?php echo "<p class='text-danger'>$errSubject</p>";?>
-											</div>
-										</div>
-										<div class="row uniform">
-											<div class="12u">
-												<ul class="actions">
-													<li><input id="submit" name="submit" type="submit" class="special" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
+									<ul class="feature-icons">
+										<li><a href="https://twitter.com/n05rahul" target="_blank"><i class="icon fa-twitter"></i>&nbsp;&nbsp;&nbsp; twitter.com/n05rahul</a></li>
+										<li><a href="https://www.linkedin.com/in/rahulnahata05/" target="_blank"><i class="icon fa-linkedin"></i>&nbsp;&nbsp;&nbsp; linkedin.com/in/rahulnahata05/</a></li>
+										<li><a href="https://www.instagram.com/rahul_nahata/" target="_blank"><i class="icon fa-instagram"></i>&nbsp;&nbsp;&nbsp; instagram.com/rahul_nahata/</a></li>
+										<li><a ><i class="icon fa-envelope"></i>&nbsp;&nbsp;&nbsp; rahulnahata@hotmail.co.in</a></li>
+									</ul>
+									<p> Download My resume from here.</p>
+									<ul class="feature-icons">
+										<li><a href="https://nahatarahul.github.io/pdf/RESUME_RAHUL_NAHATA.pdf" target="_blank"><i class="icon fa-file"></i>&nbsp;&nbsp;&nbsp; Resume</a></li>
+									</ul>
 								</div>
 							</section>
 
@@ -238,7 +182,9 @@
 					<section id="footer">
 						<div class="container">
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li>
+								<p align="center">“If I had asked people what they wanted, they would have said faster horses. ”<br />
+										- Henry Ford</p>
+								<li>&copy; nahatarahul. All rights reserved.</li>
 							</ul>
 						</div>
 					</section>

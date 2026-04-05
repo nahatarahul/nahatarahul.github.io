@@ -55,13 +55,12 @@
 
   /* ── GANTT TIMELINE RENDERER ─────────────────────────────────── */
 
-  const TRACK_ORDER = ['education', 'internship', 'work', 'domain', 'certification', 'achievement', 'responsibility'];
+  const TRACK_ORDER = ['education', 'internship', 'work', 'domain', 'achievement', 'responsibility'];
   const TRACK_LABELS = {
-    education:      'Education',
+    education:      'Edu & Certs',
     internship:     'Internships',
     work:           'Work',
     domain:         'Domain',
-    certification:  'Certs',
     achievement:    'Achievements',
     responsibility: 'Responsibilities'
   };

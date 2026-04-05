@@ -125,50 +125,55 @@ const timelineData = [
     description: "Net Cost of Refunds & Concessions — preventing financial losses through fraud detection and intelligent concession systems."
   },
 
-  // ─── CERTIFICATIONS ───────────────────────────────────────────────────────
+  // ─── CERTIFICATIONS (shown in the Education row, purple markers) ──────────
   {
-    track: "certification",
+    track: "education",
     label: "Blockchain Basics",
-    sublabel: "Coursera",
+    sublabel: "Coursera · Certification",
     start: "2019-02",
     end: "2019-02",
     isPoint: true,
+    color: "#8E44AD",
     description: "Blockchain Basics — Coursera (Feb 2019)"
   },
   {
-    track: "certification",
+    track: "education",
     label: "Smart Contracts",
-    sublabel: "Coursera",
+    sublabel: "Coursera · Certification",
     start: "2019-03",
     end: "2019-03",
     isPoint: true,
+    color: "#8E44AD",
     description: "Smart Contracts — Coursera (Mar 2019)"
   },
   {
-    track: "certification",
+    track: "education",
     label: "Generative AI for Leaders",
-    sublabel: "Vanderbilt University",
+    sublabel: "Vanderbilt University · Certification",
     start: "2025-08",
     end: "2025-08",
     isPoint: true,
+    color: "#8E44AD",
     description: "Generative AI for Leaders — Vanderbilt University (Aug 2025)"
   },
   {
-    track: "certification",
+    track: "education",
     label: "GenAI Automation Tools",
-    sublabel: "Edureka",
+    sublabel: "Edureka · Certification",
     start: "2025-09",
     end: "2025-09",
     isPoint: true,
+    color: "#8E44AD",
     description: "Generative AI Automation Tools and Applications — Edureka (Sep 2025)"
   },
   {
-    track: "certification",
+    track: "education",
     label: "ChatGPT & Zapier: Agentic AI",
-    sublabel: "Vanderbilt University",
+    sublabel: "Vanderbilt University · Certification",
     start: "2025-10",
     end: "2025-10",
     isPoint: true,
+    color: "#8E44AD",
     description: "ChatGPT & Zapier: Agentic AI for Everyone — Vanderbilt University (Oct 2025)"
   },
 

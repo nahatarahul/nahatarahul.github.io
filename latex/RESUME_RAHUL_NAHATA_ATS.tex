@@ -1,0 +1,212 @@
+%=====================================================================
+%  RAHUL NAHATA — RESUME (SINGLE-COLUMN, ATS-HARDENED)
+%  Compile with: XeLaTeX (recommended) or pdfLaTeX
+%  Overleaf: Menu → Settings → Compiler → XeLaTeX
+%
+%  This variant is optimised for Applicant Tracking Systems:
+%  - Single-column, strict top-to-bottom reading order
+%  - Standard section headings (Summary, Experience, Skills, etc.)
+%  - No icons, no tables, no text boxes, no multi-column layouts
+%  - Comma-separated keyword lists (tokenise cleanly)
+%  - Plain text contact line (no font glyphs)
+%  - Subtle orange accent retained for human readability
+%=====================================================================
+\documentclass[9pt,a4paper]{extarticle}
+
+%---------- FONTS ----------
+\usepackage{iftex}
+\ifxetex
+  \usepackage{fontspec}
+  \IfFontExistsTF{Inter}{%
+    \setmainfont{Inter}[
+      UprightFont    = * Regular,
+      BoldFont       = * SemiBold,
+      ItalicFont     = * Italic,
+      BoldItalicFont = * SemiBold Italic
+    ]
+  }{%
+    \setmainfont{Latin Modern Sans}
+  }
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+%---------- PAGE / LAYOUT ----------
+\usepackage[a4paper,top=0.8cm,bottom=0.8cm,left=1.1cm,right=1.1cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{parskip}
+\setlength{\parskip}{0.5pt plus 0.3pt}
+\linespread{0.98}
+
+%---------- COLORS (subtle; ATS ignores colour) ----------
+\definecolor{accent}{HTML}{FF9900}
+\definecolor{textdark}{HTML}{1A1A1A}
+\definecolor{textmuted}{HTML}{555555}
+\color{textdark}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+  pdftitle={Rahul Nahata - Resume},
+  pdfauthor={Rahul Nahata},
+  pdfsubject={Software Development Manager Resume},
+  pdfkeywords={Software Development Manager, Engineering Leader, FinTech, Compliance, AWS, Java, Distributed Systems, Amazon}
+}
+
+%---------- SECTION ----------
+\newcommand{\cvsection}[1]{%
+  \vspace{2pt}%
+  {\normalsize\bfseries\color{textdark}\MakeUppercase{#1}}\par
+  \vspace{-1pt}%
+  {\color{accent}\rule{\linewidth}{0.6pt}}\par
+  \vspace{0pt}%
+}
+
+\setlist[itemize]{
+  leftmargin=1.1em,
+  topsep=0pt,
+  itemsep=0pt,
+  parsep=0pt,
+  label=\textbullet
+}
+
+%---------- ROLE HEADING ----------
+% Real text, no decorative glyphs — fully parseable.
+\newcommand{\role}[4]{%
+  \textbf{#1} \hfill \textbf{#4}\par
+  \textit{#2, #3}\par\vspace{0pt}
+}
+
+\newcommand{\edublock}[4]{%
+  \textbf{#1} \hfill \textbf{#4}\par
+  \textit{#2} -- #3\par\vspace{0pt}
+}
+
+%=====================================================================
+\begin{document}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+%---------- HEADER (plain text, ATS-safe) ----------
+\begin{center}
+  {\fontsize{18pt}{20pt}\selectfont\bfseries Rahul Nahata}\\[0pt]
+  {\small Software Development Manager, Amazon}\\[0pt]
+  {\scriptsize Ghaziabad, India ~|~ +91 70425 22288 ~|~
+   \href{mailto:rahulnahata@hotmail.co.in}{rahulnahata@hotmail.co.in} ~|~
+   \href{https://linkedin.com/in/rahulnahata05}{linkedin.com/in/rahulnahata05} ~|~
+   \href{https://nahatarahul.github.io}{nahatarahul.github.io}}
+\end{center}
+\vspace{0pt}
+{\color{accent}\rule{\linewidth}{0.7pt}}
+
+\small
+
+%---------- SUMMARY ----------
+\cvsection{Professional Summary}
+Engineering leader with \textbf{13+ years} building large-scale systems across FinTech,
+tax compliance, and revenue protection. Currently leading global teams at Amazon focused
+on preventing financial losses across millions of transactions worldwide. Deep hands-on
+background as a Software Development Engineer across withholding tax automation, global
+compliance reporting, and EDA tooling. Experienced in leading distributed teams across
+India and Europe, defining engineering roadmaps, and partnering with Finance, Legal, Tax,
+and Compliance stakeholders.
+
+%---------- CORE SKILLS (keyword-dense block for ATS) ----------
+\cvsection{Core Skills}
+\textbf{Leadership:} Software Development Management, People Management, Team Building,
+Global Stakeholder Management, Technical Roadmap, Strategy, Engineering Excellence,
+Bar Raising, Hiring, Organisational Design, Cross-functional Collaboration.\par\vspace{2pt}
+\textbf{Technical:} Java, C, C++, Python, R, Matlab, Shell, Distributed Systems,
+AWS Cloud Infrastructure, Linux, Large-scale Backend Services, Microservices, REST APIs,
+SQL, Oracle, Data Structures, Algorithms, Computer Networks, System Design.\par\vspace{2pt}
+\textbf{Domains:} FinTech, Withholding Tax, Global Compliance Reporting, Tax Automation,
+Regulatory Technology, Fraud and Abuse Prevention, Revenue Protection, EDA Tools,
+Production Engineering.\par\vspace{2pt}
+\textbf{AI and Emerging Tech:} Generative AI for Leaders, Agentic AI, CrewAI, LangGraph,
+Zapier, Amazon Bedrock, AI Automation, Workflow Automation, Blockchain, Smart Contracts.
+
+%---------- EXPERIENCE ----------
+\cvsection{Professional Experience}
+
+\role{Software Development Manager, NCRC (Revenue Protection)}{Amazon}{Gurugram, India}{August 2025 -- Present}
+\begin{itemize}
+  \item Leading global engineering teams to reduce Amazon's Net Cost of Refunds and
+        Concessions, protecting millions of transactions worldwide.
+  \item Building intelligent systems that distinguish genuine customer issues from
+        systematic fraud and abuse at massive scale.
+  \item Owning engineering roadmap, hiring, and organisational health across multiple
+        geographies.
+\end{itemize}
+
+\role{Software Development Manager, FinTech (Global Compliance)}{Amazon}{Gurugram, India}{July 2024 -- August 2025}
+\begin{itemize}
+  \item Led global FinTech engineering teams across India and Europe delivering
+        compliance systems under strict regulatory deadlines.
+  \item Defined engineering roadmap, drove team health across geographies, and
+        partnered with Finance, Legal, Tax, and Compliance stakeholders.
+\end{itemize}
+
+\role{Software Development Engineer III, FinTech Compliance Reporting}{Amazon}{Gurugram, India}{December 2022 -- July 2024}
+\begin{itemize}
+  \item Designed and built a modular, plug-and-play compliance reporting platform
+        enabling automated regulatory filings across multiple countries.
+  \item Architected the platform so new jurisdictions could onboard without rebuilding
+        from scratch, significantly reducing delivery time for new regulatory
+        requirements.
+\end{itemize}
+
+\role{Software Development Engineer II, FinTech Withholding Tax}{Amazon}{Gurugram, India}{August 2019 -- December 2022}
+\begin{itemize}
+  \item Owned Amazon's global withholding tax product including automated tax
+        deductions at source, government disbursements, and customer refund mechanisms.
+  \item Delivered across multiple geographies with strict correctness and auditability
+        requirements.
+\end{itemize}
+
+\role{Software Engineer II}{Cadence Design Systems}{Noida, India}{November 2017 -- August 2019}
+\begin{itemize}
+  \item As part of the Cadence R\&D team, worked on Xcelium parallel logic simulator
+        software, specifically on coverage testing and automations used to design
+        next-generation intelligent systems on chip.
+\end{itemize}
+
+\role{Lead Engineer}{Samsung India Electronics}{Noida, India}{July 2013 -- November 2017}
+\begin{itemize}
+  \item Part of Commercial R\&D team. Built tools and automation for production
+        testing, Android platform validation, and RF calibration workflows.
+  \item Built a real-time log analysis tool with predictive issue detection, OS
+        upgrade validation automation, and an SMP-based binary download optimisation
+        delivering significant factory throughput improvement.
+\end{itemize}
+
+%---------- EDUCATION ----------
+\cvsection{Education}
+\edublock{Bachelor of Technology, Computer Science and Engineering}{Indian Institute of Technology, Jodhpur}{CGPA 8.82 / 10, IIT JEE AIR 2813 among 384,977 candidates}{2009 -- 2013}
+\edublock{Class XII, Science (CBSE)}{Aklank Public School, Rajasthan}{84.5\%}{2006 -- 2008}
+
+%---------- CERTIFICATIONS ----------
+\cvsection{Certifications}
+\begin{itemize}
+  \item ChatGPT and Zapier: Agentic AI for Everyone, Vanderbilt University, October 2025
+  \item Generative AI Automation Tools, Edureka, September 2025
+  \item Generative AI for Leaders, Vanderbilt University, August 2025
+  \item Smart Contracts, Coursera, March 2019
+  \item Blockchain Basics, Coursera, February 2019
+\end{itemize}
+
+%---------- INTERNSHIPS ----------
+\cvsection{Internships}
+\begin{itemize}
+  \item \textbf{National Instruments, India} -- Technical Marketing Intern, Bengaluru
+        (May 2012 -- July 2012).
+  \item \textbf{University of Technology of Troyes, France} -- R\&D Intern, CAPSEC
+        Research Programme, Troyes (May 2011 -- July 2011).
+\end{itemize}
+
+\end{document}

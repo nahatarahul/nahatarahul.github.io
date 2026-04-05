@@ -1,0 +1,254 @@
+%=====================================================================
+%  RAHUL NAHATA — RESUME
+%  Compile with: XeLaTeX (recommended) or pdfLaTeX
+%  Overleaf: Menu → Settings → Compiler → XeLaTeX
+%  Styling: minimal, two-column, orange #FF9900 accent
+%           matches nahatarahul.github.io
+%=====================================================================
+\documentclass[10pt,a4paper]{article}
+%---------- ENCODING / FONTS ----------
+\usepackage{iftex}
+\ifxetex
+  \usepackage{fontspec}
+  \IfFontExistsTF{Inter}{%
+    \setmainfont{Inter}[
+      UprightFont    = * Regular,
+      BoldFont       = * SemiBold,
+      ItalicFont     = * Italic,
+      BoldItalicFont = * SemiBold Italic
+    ]
+  }{%
+    \setmainfont{Latin Modern Sans}
+  }
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+%---------- PAGE / LAYOUT ----------
+\usepackage[a4paper,top=1.4cm,bottom=1.4cm,left=1.4cm,right=1.4cm]{geometry}
+\usepackage{paracol}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{parskip}
+%---------- COLOR PALETTE (matches website) ----------
+\definecolor{accent}{HTML}{FF9900}
+\definecolor{textdark}{HTML}{1A1A1A}
+\definecolor{textmuted}{HTML}{555555}
+\definecolor{textlight}{HTML}{888888}
+\definecolor{border}{HTML}{E0E0E0}
+\definecolor{bgalt}{HTML}{F7F7F7}
+\color{textdark}
+%---------- HYPERLINKS ----------
+\hypersetup{
+  colorlinks=true,
+  urlcolor=accent,
+  linkcolor=accent,
+  pdftitle={Rahul Nahata - Resume},
+  pdfauthor={Rahul Nahata}
+}
+%---------- CUSTOM SECTION COMMAND (no titlesec, to keep things robust) ----------
+\newcommand{\cvsection}[1]{%
+  \vspace{8pt}%
+  {\normalsize\bfseries\color{textdark}\MakeUppercase{#1}}\par
+  \vspace{1pt}%
+  {\color{accent}\rule{\linewidth}{1pt}}\par
+  \vspace{3pt}%
+}
+%---------- LIST STYLING ----------
+\setlist[itemize]{
+  leftmargin=1.1em,
+  topsep=2pt,
+  itemsep=1pt,
+  parsep=0pt,
+  label={\color{accent}\textbullet}
+}
+%---------- HELPERS ----------
+\newcommand{\role}[4]{%
+  % #1 = title, #2 = company, #3 = location, #4 = dates
+  {\bfseries\color{textdark}#1}\par
+  {\color{accent}\small #2}\hfill{\color{textmuted}\small #4}\par
+  {\color{textlight}\small\itshape #3}\par\vspace{2pt}
+}
+\newcommand{\edublock}[4]{%
+  {\bfseries\color{textdark}#1}\par
+  {\color{accent}\small #2}\hfill{\color{textmuted}\small #4}\par
+  {\color{textlight}\small\itshape #3}\par\vspace{2pt}
+}
+%---------- BEYOND-WORK ICON HELPER ----------
+\newcommand{\beyondicon}[2]{%
+  \begin{minipage}[t]{0.155\linewidth}
+    \centering
+    {\Huge\color{accent}#1}\par\vspace{4pt}
+    {\small\color{textdark}#2}
+  \end{minipage}%
+}
+%---------- HEADER ----------
+\newcommand{\resumeheader}{%
+  \begingroup
+  \setlength{\parskip}{0pt}
+  \begin{flushleft}
+    {\fontsize{26pt}{30pt}\selectfont\bfseries\color{textdark}Rahul Nahata}\par
+    \vspace{2pt}
+    {\large\color{accent}Software Development Manager~\textperiodcentered~Amazon}\par
+    \vspace{2pt}
+    {\small\color{textmuted}\itshape Building systems that scale. Leading teams that grow.}\par
+    \vspace{6pt}
+    {\color{border}\rule{\linewidth}{0.8pt}}\par
+    \vspace{3pt}
+    {\small\color{textmuted}%
+      \faMapMarker*~Ghaziabad, India \quad
+      \faPhone*~+91 70425 22288 \quad
+      \faEnvelope~\href{mailto:rahulnahata@hotmail.co.in}{rahulnahata@hotmail.co.in} \quad
+      \faLinkedin~\href{https://linkedin.com/in/rahulnahata05}{linkedin.com/in/rahulnahata05} \quad
+      \faGlobe~\href{https://nahatarahul.github.io}{nahatarahul.github.io}%
+    }\par
+    \vspace{2pt}
+    {\color{border}\rule{\linewidth}{0.4pt}}
+  \end{flushleft}
+  \endgroup
+  \vspace{2pt}
+}
+%=====================================================================
+\begin{document}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\resumeheader
+%---------- PROFESSIONAL SUMMARY ----------
+\cvsection{Professional Summary}
+\small
+Engineering leader with \textbf{13+ years} building large-scale systems across FinTech, tax
+compliance, and revenue protection. Currently leading global teams at Amazon focused on
+preventing financial losses across millions of transactions worldwide. Technical grounding
+as a hands-on SDE in withholding tax automation, global compliance reporting, and EDA
+tooling shapes how I lead today -- I still think in systems.
+\vspace{2pt}
+%=====================================================================
+%  TWO-COLUMN BODY
+%=====================================================================
+\columnratio{0.62,0.38}
+\setlength{\columnsep}{1.2em}
+\setlength{\columnseprule}{0pt}
+\begin{paracol}{2}
+%---------------- LEFT COLUMN ----------------
+\cvsection{Experience}
+\role{Software Development Manager -- NCRC}{Amazon~\textperiodcentered~Revenue Protection}{Gurugram, India}{Aug 2025 -- Present}
+\begin{itemize}
+  \item Leading global engineering teams to reduce Amazon's net cost of refunds and
+        concessions, protecting millions of transactions worldwide.
+  \item Building intelligent systems that distinguish genuine customer issues from
+        systematic fraud and abuse at massive scale.
+  \item Owning engineering roadmap, hiring, and organisational health across
+        multiple geographies.
+\end{itemize}
+\role{Software Development Manager -- FinTech}{Amazon~\textperiodcentered~Global Compliance}{Gurugram, India}{Jul 2024 -- Aug 2025}
+\begin{itemize}
+  \item Led global FinTech engineering teams across India and Europe delivering
+        compliance systems under regulatory deadlines.
+  \item Defined engineering roadmap, drove team health across geographies, and
+        partnered with Finance, Legal, Tax, and Compliance stakeholders.
+\end{itemize}
+\role{SDE III -- FinTech Compliance Reporting}{Amazon}{Gurugram, India}{Dec 2022 -- Jul 2024}
+\begin{itemize}
+  \item Designed and built a modular, plug-and-play compliance reporting platform
+        enabling automated regulatory filings across multiple countries.
+  \item Architected so new jurisdictions onboard without rebuilding from scratch --
+        significantly reducing delivery time for new regulatory requirements.
+\end{itemize}
+\role{SDE II -- FinTech Withholding Tax}{Amazon}{Gurugram, India}{Aug 2019 -- Dec 2022}
+\begin{itemize}
+  \item Owned Amazon's global withholding tax product -- automated tax deductions
+        at source, government disbursements, and customer refund mechanisms.
+  \item Delivered across multiple geographies with strict correctness and
+        auditability requirements.
+\end{itemize}
+\role{Software Engineer II}{Cadence Design Systems}{Noida, India}{Nov 2017 -- Aug 2019}
+\begin{itemize}
+  \item As a part of Cadence R\&D team, worked on Xcelium parallel logic simulator
+        software, specifically on coverage testing \& automations used to design
+        next-gen intelligent systems on chip for future computational devices.
+\end{itemize}
+\role{Lead Engineer}{Samsung India Electronics}{Noida, India}{Jul 2013 -- Nov 2017}
+\begin{itemize}
+  \item Commercial R\&D team -- built tools and automation for production testing,
+        Android platform validation, and RF calibration workflows.
+  \item Built a real-time log analysis tool with predictive issue detection, OS
+        upgrade validation automation, and an SMP-based binary download
+        optimisation delivering significant improvement in factory throughput.
+\end{itemize}
+\cvsection{Education}
+\edublock{B.Tech, Computer Science \& Engineering}{Indian Institute of Technology, Jodhpur}{CGPA 8.82 / 10~\textperiodcentered~IIT JEE AIR 2813 among 384{,}977 candidates}{2009 -- 2013}
+\edublock{Class XII (CBSE), Science}{Aklank Public School, Rajasthan}{84.5\%}{2006 -- 2008}
+\cvsection{Internships}
+\small
+\textbf{National Instruments} -- Tech Marketing Intern, Bengaluru (May--Jul 2012)\par\vspace{1pt}
+\textbf{UTT France} -- R\&D Intern, CAPSEC Programme, Troyes (May--Jul 2011)
+%---------------- RIGHT COLUMN (SIDEBAR) ----------------
+\switchcolumn
+\cvsection{Key Strengths}
+\small
+\begin{itemize}
+  \item Large-scale distributed systems
+  \item Global team leadership (India \& Europe)
+  \item FinTech \& regulatory compliance
+  \item Engineering roadmap \& strategy
+  \item Hiring, mentoring, org design
+  \item Cross-functional stakeholder mgmt
+\end{itemize}
+\cvsection{Technical Skills}
+\small
+\textbf{Languages}\par
+Java~\textperiodcentered~C/C++~\textperiodcentered~Python~\textperiodcentered~R~\textperiodcentered~Matlab~\textperiodcentered~Shell\par\vspace{3pt}
+\textbf{Systems}\par
+Distributed Systems~\textperiodcentered~AWS Cloud Infra~\textperiodcentered~Linux~\textperiodcentered~Large-scale Backend Services~\textperiodcentered~SQL / Oracle\par\vspace{3pt}
+\textbf{Domains}\par
+FinTech~\textperiodcentered~Withholding Tax~\textperiodcentered~Compliance Automation~\textperiodcentered~Fraud \& Abuse Prevention~\textperiodcentered~Revenue Protection~\textperiodcentered~EDA Tools\par\vspace{3pt}
+\textbf{CS Fundamentals}\par
+Algorithms \& Data Structures~\textperiodcentered~Theory of Computation~\textperiodcentered~Networks~\textperiodcentered~Computer Architecture~\textperiodcentered~Signal Processing
+\cvsection{Leadership Skills}
+\small
+\begin{itemize}
+  \item Software Development Management
+  \item People Management \& Team Building
+  \item Global Stakeholder Management
+  \item Technical Roadmap \& Strategy
+  \item Engineering Excellence / Bar Raising
+  \item Hiring \& Organisational Design
+\end{itemize}
+\cvsection{AI \& Emerging Tech}
+\small
+\begin{itemize}
+  \item Generative AI for Leaders
+  \item Agentic AI (CrewAI, LangGraph, Zapier, Bedrock)
+  \item AI Automation Tools \& Workflows
+  \item Blockchain \& Smart Contracts
+\end{itemize}
+\cvsection{Certifications}
+\small
+\begin{itemize}
+  \item ChatGPT \& Zapier: Agentic AI for Everyone -- \textit{Vanderbilt, Oct 2025}
+  \item Generative AI Automation Tools -- \textit{Edureka, Sep 2025}
+  \item Generative AI for Leaders -- \textit{Vanderbilt, Aug 2025}
+  \item Smart Contracts -- \textit{Coursera, Mar 2019}
+  \item Blockchain Basics -- \textit{Coursera, Feb 2019}
+\end{itemize}
+\end{paracol}
+
+%=====================================================================
+%  FULL-WIDTH BEYOND WORK (icons row, mirrors old resume style)
+%=====================================================================
+\vspace{6pt}
+\cvsection{Beyond Work}
+
+\noindent
+\beyondicon{\faCamera}{Photography}\hfill
+\beyondicon{\faChartLine}{Stock Market}\hfill
+\beyondicon{\faBaseballBall}{Cricket}\hfill
+\beyondicon{\faBookOpen}{Literature}\hfill
+\beyondicon{\faPlane}{Travel}\hfill
+\beyondicon{\faDumbbell}{Fitness}
+
+\end{document}
